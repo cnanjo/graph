@@ -18,6 +18,7 @@
 package guru.mwangaza.graph.api;
 
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -25,7 +26,7 @@ import java.util.Map;
  *
  * @param <T>
  */
-public interface BaseNode<T> {
+public interface BaseNode<T> extends Serializable {
     /**
      * Path delimiter
      */
@@ -192,4 +193,11 @@ public interface BaseNode<T> {
      */
     void addProperty(String key, Object value);
 
+    /**
+     * Method deep-clones node.
+     *
+     * @param object
+     * @return
+     */
+    public BaseNode<T> deepClone();
 }

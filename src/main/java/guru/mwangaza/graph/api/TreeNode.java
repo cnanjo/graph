@@ -20,10 +20,11 @@ package guru.mwangaza.graph.api;
 import guru.mwangaza.graph.implementation.TreeNodeImpl;
 import guru.mwangaza.graph.implementation.visitor.NodeCountVisitor;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.function.Consumer;
 
-public interface TreeNode<T> extends guru.mwangaza.graph.api.BaseNode<T> {
+public interface TreeNode<T> extends guru.mwangaza.graph.api.BaseNode<T>, Serializable {
     /**
      * Returns a node's children.
      *

@@ -19,6 +19,10 @@ package guru.mwangaza.graph.implementation;
 
 import guru.mwangaza.graph.api.BaseNode;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.*;
 
 public abstract class BaseNodeImpl<T> implements guru.mwangaza.graph.api.BaseNode<T> {
@@ -458,5 +462,24 @@ public abstract class BaseNodeImpl<T> implements guru.mwangaza.graph.api.BaseNod
 			this.properties = new LinkedHashMap<>();
 		}
 		this.properties.put(key, value);
+	}
+
+	/**
+	 * This method makes a "deep clone" of any Java object it is given.
+	 */
+	@Override
+	public BaseNode<T> deepClone() {
+		try {
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(baos);
+			oos.writeObject(this);
+			ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+			ObjectInputStream ois = new ObjectInputStream(bais);
+			return (BaseNode<T>)ois.readObject();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

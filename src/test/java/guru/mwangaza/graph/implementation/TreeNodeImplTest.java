@@ -302,6 +302,12 @@ public class TreeNodeImplTest {
     }
 
     @Test
+    public void testBreadthFirstAlgorithm() throws Exception {
+        TreeNode<String> root = buildGraph();
+        root.
+    }
+
+    @Test
     public void isLeaf() throws Exception {
 
     }
@@ -327,11 +333,15 @@ public class TreeNodeImplTest {
         TreeNode<String> L1_2 = new TreeNodeImpl<String>("L1_2");
         TreeNode<String> L1_3 = new TreeNodeImpl<String>("L1_3");
         TreeNode<String> L1_2_1 = new TreeNodeImpl<String>("L1_2_1");
+        TreeNode<String> L1_2_2 = new TreeNodeImpl<String>("L1_2_2");
+        TreeNode<String> L1_2_3 = new TreeNodeImpl<String>("L1_2_3");
         TreeNode<String> L1_2_1_1 = new TreeNodeImpl<String>("L1_2_1_1");
         root.addChild(L1_1);
         root.addChild(L1_2);
         root.addChild(L1_3);
         L1_2.addChild(L1_2_1);
+        L1_2.addChild(L1_2_2);
+        L1_2.addChild(L1_2_3);
         L1_2_1.addChild(L1_2_1_1);
         return root;
     }

@@ -486,6 +486,15 @@ public class TreeNodeImpl<T> extends BaseNodeImpl<T> implements TreeNode<T> {
 		return aggregator.getPaths();
 	}
 
+	/**
+	 *
+	 * @return
+	 */
+	@Override
+	public TreeNode<T> deepClone() {
+		return (TreeNode<T>)super.deepClone();
+	}
+
     /**
      * To string returns the name assigned to this node.
      *

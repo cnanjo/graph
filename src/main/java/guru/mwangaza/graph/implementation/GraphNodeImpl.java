@@ -141,4 +141,13 @@ public class GraphNodeImpl<T> extends BaseNodeImpl<T> implements GraphNode<T> {
     public boolean childWithNameAlreadyExists(GraphNode node) {
         return super._childWithNameAlreadyExists(node);
     }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public GraphNode<T> deepClone() {
+        return (GraphNode<T>)super.deepClone();
+    }
 }

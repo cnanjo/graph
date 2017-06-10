@@ -19,11 +19,12 @@ package guru.mwangaza.graph.api;
 
 import guru.mwangaza.graph.implementation.GraphNodeImpl;
 
+import java.io.Serializable;
 import java.util.List;
 
 
 
-public interface GraphNode<T> extends guru.mwangaza.graph.api.BaseNode<T> {
+public interface GraphNode<T> extends guru.mwangaza.graph.api.BaseNode<T>, Serializable {
     /**
      * Returns the node's children.
      *
